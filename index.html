@@ -39,11 +39,10 @@
             </colgroup>
             <tbody class="u-table-body">
               <tr style="height: 31px;">
-                <td class="u-border-1 u-border-grey-dark-1 u-custom-font u-font-courier-new u-table-cell">SPEED:&nbsp; &nbsp;</td>
-                <td class="u-border-1 u-border-grey-dark-1 u-custom-font u-font-courier-new u-table-cell">ACCELERATION:&nbsp; &nbsp;</td>
-                <td class="u-border-1 u-border-grey-dark-1 u-custom-font u-font-courier-new u-table-cell">ALTITUDE:</td>
-                <td class="u-border-1 u-border-grey-dark-1 u-custom-font u-font-courier-new u-table-cell">POSITION:</td>
-                <td class="u-border-1 u-border-grey-dark-1 u-custom-font u-font-courier-new u-table-cell">FUEL LEVEL:</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-custom-font u-font-courier-new u-table-cell">SPEED: <span id="speed">0</span> m/s</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-custom-font u-font-courier-new u-table-cell">ACCELERATION: <span id="acc">0</span> km/s/s</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-custom-font u-font-courier-new u-table-cell">ALTITUDE: <span id="alt">0</span> km</td>               
+                <td class="u-border-1 u-border-grey-dark-1 u-custom-font u-font-courier-new u-table-cell">FUEL LEVEL: <span id="fuel">100</span>%</td>
               </tr>
             </tbody>
           </table>
@@ -51,8 +50,8 @@
       </div></header>
     <section class="u-clearfix u-grey-80 u-section-1" id="sec-0059">
       <div class="u-clearfix u-sheet u-sheet-1">
-        <div >
-          <div ><video padding-top="10px" width="100%" height="100%" autoplay muted>
+        <div>
+          <div><video padding-top="10px" width="100%" height="100%" autoplay muted>
             <source src="Astro-Miner0001-1000.mp4" type="video/mp4">                                   
           </video></div>
         </div>
@@ -70,11 +69,11 @@
             </colgroup>
             <tbody class="u-table-body">
               <tr style="height: 46px;">
-                <td class="u-border-1 u-border-grey-dark-1 u-custom-font u-font-courier-new u-table-cell">PROXIMITY:</td>
-                <td class="u-border-1 u-border-grey-dark-1 u-custom-font u-font-courier-new u-table-cell">WEIGHT:</td>
-                <td class="u-border-1 u-border-grey-dark-1 u-custom-font u-font-courier-new u-table-cell">HEAT:&nbsp;&nbsp;</td>
-                <td class="u-border-1 u-border-grey-dark-1 u-custom-font u-font-courier-new u-table-cell">SERVOS POS:</td>
-                <td class="u-border-1 u-border-grey-dark-1 u-custom-font u-font-courier-new u-table-cell">DRILL SPEED:</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-custom-font u-font-courier-new u-table-cell">PROXIMITY: <span id="prox">0</span> km</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-custom-font u-font-courier-new u-table-cell">WEIGHT: <span id="weight">0</span> kg</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-custom-font u-font-courier-new u-table-cell">HEAT: <span id="heat">0</span> K</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-custom-font u-font-courier-new u-table-cell">SERVOS POS: <span id="servo">0</span>°</td>
+                <td class="u-border-1 u-border-grey-dark-1 u-custom-font u-font-courier-new u-table-cell">DRILL SPEED: <span id="drillSpeed">0</span> RPM</td>
               </tr>
             </tbody>
           </table>
@@ -84,5 +83,325 @@
     
     
     <footer class="u-align-left u-clearfix u-footer u-grey-80 u-footer" id="sec-55c2"><div class="u-clearfix u-sheet u-sheet-1"></div></footer>
+
+    <script>
+      const speed = document.getElementById('speed');
+      const acc = document.getElementById('acc');
+      const alt = document.getElementById('alt');
+      const fuel = document.getElementById('fuel');
+      const prox = document.getElementById('prox');
+      const weight = document.getElementById('weight');
+      const heat = document.getElementById('heat');
+      const servo = document.getElementById('servo');
+      const drillSpeed = document.getElementById('drillSpeed');
+
+      //0-6500 sec
+      setTimeout(function() {
+        speed.innerHTML = "0";
+        acc.innerHTML = "0";
+        alt.innerHTML = "0";
+        fuel.innerHTML = "100";
+        prox.innerHTML = "N/A";
+        weight.innerHTML = "0";
+        heat.innerHTML = "299";
+        servo.innerHTML = "N/A";
+        drillSpeed.innerHTML = "0";
+      }, 6500);
+
+      //6500-10000
+      setTimeout(function() {
+        speed.innerHTML = "450";
+        acc.innerHTML = "90";
+        alt.innerHTML = "11.9";
+        fuel.innerHTML = "80";
+        prox.innerHTML = "N/A";
+        weight.innerHTML = "0";
+        heat.innerHTML = "288";
+        servo.innerHTML = "N/A";
+        drillSpeed.innerHTML = "0";
+      }, 10000);
+
+      //10000-15000
+      setTimeout(function() {
+        speed.innerHTML = "7900";
+        acc.innerHTML = "0";
+        alt.innerHTML = "37M";
+        fuel.innerHTML = "73";
+        prox.innerHTML = "N/A";
+        weight.innerHTML = "0";
+        heat.innerHTML = "2.7";
+        servo.innerHTML = "N/A";
+        drillSpeed.innerHTML = "0";
+      }, 15000);
+
+      //15000-20000
+      setTimeout(function() {
+        speed.innerHTML = "7928";
+        acc.innerHTML = "0";
+        alt.innerHTML = "74M";
+        fuel.innerHTML = "70";
+        prox.innerHTML = "N/A";
+        weight.innerHTML = "0";
+        heat.innerHTML = "2.7";
+        servo.innerHTML = "N/A";
+        drillSpeed.innerHTML = "0";
+      }, 20000);
+
+      //20000-25000
+      setTimeout(function() {
+        speed.innerHTML = "7997";
+        acc.innerHTML = "0";
+        alt.innerHTML = "111M";
+        fuel.innerHTML = "68.3";
+        prox.innerHTML = "N/A";
+        weight.innerHTML = "0";
+        heat.innerHTML = "2.7";
+        servo.innerHTML = "N/A";
+        drillSpeed.innerHTML = "0";
+      }, 25000);
+
+      //25000-30000
+      setTimeout(function() {
+        speed.innerHTML = "7956";
+        acc.innerHTML = "0";
+        alt.innerHTML = "148M";
+        fuel.innerHTML = "68.1";
+        prox.innerHTML = "N/A";
+        weight.innerHTML = "0";
+        heat.innerHTML = "2.7";
+        servo.innerHTML = "N/A";
+        drillSpeed.innerHTML = "0";
+      }, 30000);
+
+      //30000-35000
+      setTimeout(function() {
+        speed.innerHTML = "7933";
+        acc.innerHTML = "0";
+        alt.innerHTML = "185M";
+        fuel.innerHTML = "67.8";
+        prox.innerHTML = "N/A";
+        weight.innerHTML = "0";
+        heat.innerHTML = "2.75";
+        servo.innerHTML = "N/A";
+        drillSpeed.innerHTML = "0";
+      }, 35000);
+
+      //35000-40000
+      setTimeout(function() {
+        speed.innerHTML = "7967";
+        acc.innerHTML = "0";
+        alt.innerHTML = "222M";
+        fuel.innerHTML = "67.5";
+        prox.innerHTML = "N/A";
+        weight.innerHTML = "0";
+        heat.innerHTML = "2.72";
+        servo.innerHTML = "N/A";
+        drillSpeed.innerHTML = "0";
+      }, 40000);
+
+      //40000-45000
+      setTimeout(function() {
+        speed.innerHTML = "7901";
+        acc.innerHTML = "0";
+        alt.innerHTML = "259M";
+        fuel.innerHTML = "67";
+        prox.innerHTML = "N/A";
+        weight.innerHTML = "0";
+        heat.innerHTML = "2.69";
+        servo.innerHTML = "N/A";
+        drillSpeed.innerHTML = "0";
+      }, 45000);
+
+      //50000-55000
+      setTimeout(function() {
+        speed.innerHTML = "7121";
+        acc.innerHTML = "-780";
+        alt.innerHTML = "370M";
+        fuel.innerHTML = "65";
+        prox.innerHTML = "100";
+        weight.innerHTML = "0";
+        heat.innerHTML = "2.65";
+        servo.innerHTML = "N/A";
+        drillSpeed.innerHTML = "0";
+      }, 55000);
+
+      //55000-60000
+      setTimeout(function() {
+        speed.innerHTML = "0";
+        acc.innerHTML = "0";
+        alt.innerHTML = "371M";
+        fuel.innerHTML = "48";
+        prox.innerHTML = "0";
+        weight.innerHTML = "27";
+        heat.innerHTML = "2.6";
+        servo.innerHTML = "N/A";
+        drillSpeed.innerHTML = "457";
+      }, 60000);
+
+      //60000-65000
+      setTimeout(function() {
+        speed.innerHTML = "0";
+        acc.innerHTML = "0";
+        alt.innerHTML = "371M";
+        fuel.innerHTML = "48";
+        prox.innerHTML = "0";
+        weight.innerHTML = "59.5";
+        heat.innerHTML = "2.7";
+        servo.innerHTML = "N/A";
+        drillSpeed.innerHTML = "544";
+      }, 65000);
+
+      //65000-70000
+      setTimeout(function() {
+        speed.innerHTML = "0";
+        acc.innerHTML = "0";
+        alt.innerHTML = "371M";
+        fuel.innerHTML = "48";
+        prox.innerHTML = "0";
+        weight.innerHTML = "91";
+        heat.innerHTML = "2.7";
+        servo.innerHTML = "N/A";
+        drillSpeed.innerHTML = "550";
+      }, 70000);
+
+      //70000-75000
+      setTimeout(function() {
+        speed.innerHTML = "0";
+        acc.innerHTML = "0";
+        alt.innerHTML = "371M";
+        fuel.innerHTML = "48";
+        prox.innerHTML = "0";
+        weight.innerHTML = "125";
+        heat.innerHTML = "2.7";
+        servo.innerHTML = "N/A";
+        drillSpeed.innerHTML = "550";
+      }, 75000);
+
+      //75000-80000
+      setTimeout(function() {
+        speed.innerHTML = "0";
+        acc.innerHTML = "0";
+        alt.innerHTML = "371M";
+        fuel.innerHTML = "48";
+        prox.innerHTML = "0";
+        weight.innerHTML = "163";
+        heat.innerHTML = "2.7";
+        servo.innerHTML = "N/A";
+        drillSpeed.innerHTML = "550";
+      }, 80000);
+
+      //80000-85000
+      setTimeout(function() {
+        speed.innerHTML = "0";
+        acc.innerHTML = "0";
+        alt.innerHTML = "371M";
+        fuel.innerHTML = "48";
+        prox.innerHTML = "0";
+        weight.innerHTML = "191";
+        heat.innerHTML = "2.6";
+        servo.innerHTML = "N/A";
+        drillSpeed.innerHTML = "520";
+      }, 85000);
+
+      //85000-90000
+      setTimeout(function() {
+        speed.innerHTML = "0";
+        acc.innerHTML = "0";
+        alt.innerHTML = "371M";
+        fuel.innerHTML = "48";
+        prox.innerHTML = "0";
+        weight.innerHTML = "200";
+        heat.innerHTML = "2.7";
+        servo.innerHTML = "N/A";
+        drillSpeed.innerHTML = "10";
+      }, 90000);
+
+      //90000-95000
+      setTimeout(function() {
+        speed.innerHTML = "400";
+        acc.innerHTML = "82";
+        alt.innerHTML = "370M";
+        fuel.innerHTML = "25";
+        prox.innerHTML = "100";
+        weight.innerHTML = "200";
+        heat.innerHTML = "2.8";
+        servo.innerHTML = "N/A";
+        drillSpeed.innerHTML = "0";
+      }, 95000);
+
+      //95000-100000
+      setTimeout(function() {
+        speed.innerHTML = "6900";
+        acc.innerHTML = "0";
+        alt.innerHTML = "311M";
+        fuel.innerHTML = "25";
+        prox.innerHTML = "N/A";
+        weight.innerHTML = "200";
+        heat.innerHTML = "2.7";
+        servo.innerHTML = "N/A";
+        drillSpeed.innerHTML = "0";
+      }, 100000);
+
+      //100000-105000
+      setTimeout(function() {
+        speed.innerHTML = "6950";
+        acc.innerHTML = "0";
+        alt.innerHTML = "259M";
+        fuel.innerHTML = "23";
+        prox.innerHTML = "N/A";
+        weight.innerHTML = "200";
+        heat.innerHTML = "2.8";
+        servo.innerHTML = "N/A";
+        drillSpeed.innerHTML = "0";
+      }, 105000);
+
+      //105000-110000
+      setTimeout(function() {
+        speed.innerHTML = "6900";
+        acc.innerHTML = "0";
+        alt.innerHTML = "198M";
+        fuel.innerHTML = "22";
+        prox.innerHTML = "N/A";
+        weight.innerHTML = "200";
+        heat.innerHTML = "2.8";
+        servo.innerHTML = "N/A";
+        drillSpeed.innerHTML = "0";
+      }, 110000);
+
+      //110000-115000
+      setTimeout(function() {
+        speed.innerHTML = "6900";
+        acc.innerHTML = "0";
+        alt.innerHTML = "98M";
+        fuel.innerHTML = "20";
+        prox.innerHTML = "N/A";
+        weight.innerHTML = "200";
+        heat.innerHTML = "2.6";
+        servo.innerHTML = "N/A";
+        drillSpeed.innerHTML = "0";
+      }, 115000);
+
+      //120000-125000
+      setTimeout(function() {
+        speed.innerHTML = "0";
+        acc.innerHTML = "0";
+        alt.innerHTML = "0";
+        fuel.innerHTML = "3";
+        prox.innerHTML = "N/A";
+        weight.innerHTML = "200";
+        heat.innerHTML = "298";
+        servo.innerHTML = "N/A";
+        drillSpeed.innerHTML = "0";
+      }, 125000);
+
+
+      
+
+    
+
+
+
+
+    </script>
   </body>
 </html>
